@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     "housing",
     'crispy_forms',
     'crispy_bootstrap5',
-    'rest_framework'
+    'rest_framework',
+    'drf_yasg'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
