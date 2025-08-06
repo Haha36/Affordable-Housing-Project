@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    
-    path("", include("housing.urls")),
     path("admin/", admin.site.urls),
+    path("", include("housing.urls")),  # Include housing app URLs for regular views
+    path("api/", include(("housing.routers", 'core_api'), namespace='core_api')),  # Include router for API endpoints
 ]

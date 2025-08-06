@@ -3,30 +3,10 @@
 # Think of this as the "routing table" that tells Django what to do for each URL
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-
 from django.contrib.auth import views as auth_views
 from . import views
 
-router = DefaultRouter()
-
-
 urlpatterns = [
-    path('api/', include(router.urls)),
-    # House management URLs
-    # create/ - Shows form to add new house listing
-    path('create/', views.create_view, name='create_url'),
-    
-    # show/ - Displays all house listings
-    path('show/', views.read_view, name='show_url'),
-    
-    # update/<int:f_oid> - Updates specific house by ID
-    # <int:f_oid> is a URL parameter that captures the house ID from the URL
-    # Example: update/123 would pass 123 as f_oid to the update_view function
-    path('update/<int:f_oid>', views.update_view, name= 'update_url'),
-    
-    # delete/<int:f_oid> - Deletes specific house by ID
-    path('delete/<int:f_oid>', views.delete_view, name= 'delete_url'),
-    
     # savedRead - Shows user's saved houses
     path('savedRead', views.savedRead_view, name='savedRead_url'),
     
